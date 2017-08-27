@@ -1,23 +1,12 @@
 (setq ring-bell-function 'ignore)
 
-
 (global-linum-mode t)
 
 (global-auto-revert-mode t)
 
-;;自定义补全内容
-(abbrev-mode t）
- (define-abbrev-table 'global-abbrev-table '(
-					    ;;signature
-					    ("8ca" "caoxuemi")
-					    ("8fe" "fengyuren")
-					    
-					    ))
 (setq make-backup-files nil)
 
 (setq auto-save-default nil)
-
-
 
 (recentf-mode 1)
 
@@ -27,9 +16,8 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 ;;激活popwin
-(require 'popwin）
+(require 'popwin)
 (popwin-mode t)
-
 
 (package-initialize)
 
@@ -39,9 +27,5 @@
 (delete-selection-mode 1)
 
 (add-hook 'after-init-hook 'global-company-mode)
-
-
-
-
 
 (provide 'init-better-defaults)
