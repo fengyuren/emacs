@@ -11,4 +11,7 @@
 (global-set-key (kbd "\C-x\ \C-r") 'recentf-open-files)
 (global-set-key (kbd "C-c p f") 'counsel-git)
 ;(global-set-key (kbd "C-c a") 'org-agenda))
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+(global-set-key (kbd "s-/") 'hippie-expand)
+
 (provide 'init-keybindings)
