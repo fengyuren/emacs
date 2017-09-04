@@ -1,3 +1,6 @@
+
+
+
 (setq ring-bell-function 'ignore)
 
 (global-linum-mode t)
@@ -14,7 +17,6 @@
 (setq recentf-max-menu-item 25)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
 ;;激活popwin
 (require 'popwin)
 (popwin-mode t)
@@ -57,5 +59,14 @@
                                          try-expand-line
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
+
+
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)
+(put 'dired-find-alternate-file 'disabled nil)
+
+(require 'dired-x)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
 (provide 'init-better-defaults)
