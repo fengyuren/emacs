@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (html5-schema jsx-mode company monokai-theme hungry-delete swiper counsel smartparens lua-mode nodejs-repl exec-path-from-shell popwin))))
+    (flycheck company monokai-theme hungry-delete swiper counsel smartparens lua-mode python-mode nodejs-repl exec-path-from-shell popwin elpy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,3 +1,4 @@
+
  ;; cl - Common Lisp Extension
  (require 'cl)
 
@@ -23,20 +24,35 @@
 		smartparens
 		;; --- Major Mode ---
 		lua-mode
+		python-mode
 		;; --- Minor Mode ---
 		nodejs-repl
 		exec-path-from-shell
 		;; --- Themes ---
 		popwin
 		;; solarized-theme
+
+		elpy
+		flycheck
+		py-autopep8 ;;add the autopep8 package
 		) "Default packages")
 
  (setq package-selected-packages my/packages)
 
+(elpy-enable)
  (defun my/packages-installed-p ()
      (loop for pkg in my/packages
 	   when (not (package-installed-p pkg)) do (return nil)
 	   finally (return t)))
+
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+;;(elpy-use-ipython)
+
 
  (unless (my/packages-installed-p)
      (message "%s" "Refreshing package database...")
