@@ -14,4 +14,6 @@
 ;;高亮当前行
 (global-hl-line-mode 1)
 
+(set-default-font "name (opened by): -*-Songti SC-normal-normal-normal-*-18-*-*-*-p-0-iso10646-1")
+
 (provide 'init-ui)
