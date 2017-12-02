@@ -69,4 +69,8 @@
 (require 'dired-x)
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
+(desktop-save-mode 1)
+
+(require 'file-search)
+
 (provide 'init-better-defaults)
